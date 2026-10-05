@@ -4,6 +4,8 @@
   "version": "1.0.0",
   "scripts": {
     "start": "expo start",
+    "start:emulator": "firebase emulators:start --only auth,firestore,storage",
+    "start:all": "npx concurrently \"npm run start:emulator\" \"npm run start\"",
     "reset-project": "node ./scripts/reset-project.js",
     "android": "expo run:android",
     "ios": "expo run:ios",

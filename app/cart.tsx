@@ -213,7 +213,21 @@ const Cart = () => {
                   <Text style={styles.itemName} numberOfLines={2}>{item.name}</Text>
                   <Text style={styles.itemPrice}>${item.price.toFixed(2)}</Text>
                   <View style={styles.quantityControl}>
-                    
+                    <TouchableOpacity
+                      style={styles.quantityButton}
+                      onPress={() => updateItemQuantity(item.id, item.quantity - 1)}
+                      accessibilityLabel={`Decrease quantity of ${item.name}`}
+                    >
+                      <Text style={styles.itemQuantity}>-</Text>
+                    </TouchableOpacity>
+                    <Text style={styles.itemQuantity}>{item.quantity}</Text>
+                    <TouchableOpacity
+                      style={styles.quantityButton}
+                      onPress={() => updateItemQuantity(item.id, item.quantity + 1)}
+                      accessibilityLabel={`Increase quantity of ${item.name}`}
+                    >
+                      <Text style={styles.itemQuantity}>+</Text>
+                    </TouchableOpacity>
                   </View>
                 </View>
                 <TouchableOpacity
